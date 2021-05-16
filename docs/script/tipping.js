@@ -24,3 +24,4 @@ $('#creditTip').mouseenter(function () {
 $('#authorTip').mouseenter(function () {
     $('#guideMsgIndex').text('Oh its me! Nam Tien Nguyen!');
 });
+
