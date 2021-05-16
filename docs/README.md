@@ -1,5 +1,7 @@
 # ReadMe
-This repository has been deployed in https://namtiennguyen97.github.io/index.html
+### This repository has been deployed in https://namtiennguyen97.github.io/index.html
+
+
 
 
 ![alt text](https://github.com/namtiennguyen97/namtiennguyen97.github.io/blob/master/docs/img/screenGithub.png?raw=true)
@@ -12,6 +14,7 @@ This project have 4 "child" project. Each child project is different category. J
 
 The entire project using gaming style- Nier. This project contain alot of action sound, command sound, js, css, img, etc,... so that will be a bit of heavy when it loaded! Because this is just static website, there is no backend server to save any of data. All project is faked database. I can say this project size can be compare with a Laravel project.
 
+Still on update.
 
 ### Note
 Please dont access this webiste on Mobile, every thing will go crazy, because i m super noob in css position. But i will update and fix them soon.
