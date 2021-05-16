@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Manager</title>
+    <link rel="shortcut icon" href="img/2b_icon.png" />
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="css/humanData.css">
+<!--    <link rel="stylesheet" href="css/main.css">-->
+
+
+</head>
+<body>
+<audio autoplay loop id="soundSv">
+    <source src="backgroundMusic/soundOfTheEnd.mp3">
+</audio>
+<audio id="confirmDataSound">
+    <source src="sounds/nierMenu.wav">
+</audio>
+<audio autoplay>
+    <source src="sounds/actionSounds/vo_r550_88.ogg">
+</audio>
+<audio id="deleteSound">
+    <source src="sounds/actionSounds/vo_r550_111-%20i%20see-understood.ogg">
+</audio>
+<audio id="createSound">
+    <source src="sounds/actionSounds/vo_r550_108.ogg">
+</audio>
+<audio id="validateSound">
+    <source src="sounds/actionSounds/vo_r550_57.ogg">
+</audio>
+<!--<div class="loader-container">-->
+
+<!--</div>-->
+<div class="bg">
+
+    <h2 class="titleHM" align="center">Bunker Server- All Data: <span id="totalData"></span></h2>
+
+    <div class="card-group" >
+            <div class="card cardData1">
+                <div class="glitch glitch--style-1">
+                    <div class="glitch__img"></div>
+                    <div class="glitch__img"></div>
+                    <div class="glitch__img"></div>
+                    <div class="glitch__img"></div>
+                    <div class="glitch__img"></div>
+                <h1 class="cardName">ID: 2B</h1>
+                <p class="price" style="color: #ff483f">Decs: Unit 2B type B</p>
+                <p>Info: Boost android model</p>
+                <p><button>Delete Data</button></p>
+                </div>
+            </div>
+
+
+        <div class="card cardData2">
+            <div class="glitch glitch--style-2">
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <h1 class="cardName">ID: 9S</h1>
+                <p class="price" style="color: #ff483f">Desc: 9S Type S</p>
+                <p>Info: Scanner model</p>
+                <p><button id="deleteCartData1">Delete Data</button></p>
+            </div>
+        </div>
+        <div class="card cardData3">
+            <div class="glitch glitch--style-3">
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <h1 class="cardName">ID: A2</h1>
+                <p class="price" style="color: #ff483f">Desc: Attack model 2</p>
+                <p>Info: Outlaw of android network</p>
+                <p><button >Delete Data</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="underline">
+    </div>
+
+    <div class="card-group">
+<!--        bat dau card moi-->
+
+        <div class="card cardData4">
+            <div class="glitch glitch--style-4">
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <h1 class="cardName cardName4">Unknown</h1>
+                <p class="price cardPrice4" style="color: #ff483f">unknown</p>
+                <p class="cardDes4">Unknown</p>
+                <p><button id="deleteData4" data-id="4" class="dataDeletion">Delete Data</button></p>
+            </div>
+        </div>
+        <button class="createNew4"  id="createNew4"><i class="fas fa-plus"></i></button>
+
+        <div class="card cardData5">
+        <div class="glitch glitch--style-5">
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <h1 class="cardName cardName5">Unknown</h1>
+            <p class="price cardPrice5" style="color: #ff483f">Unknown</p>
+            <p class="cardDes5">Unknown</p>
+            <p><button id="deleteData5" data-id="5" class="dataDeletion">Delete Data</button></p>
+        </div>
+         </div>
+        <button class="createNew5" id="createNew5"><i class="fas fa-plus"></i></button>
+
+
+
+        <div class="card cardData6">
+            <div class="glitch glitch--style-6">
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <div class="glitch__img"></div>
+                <h1 class="cardName cardName6">Unknown</h1>
+                <p class="price cardPrice6" style="color: #ff483f">Unknown</p>
+                <p class="cardDes6">Unknown</p>
+                <p><button id="deleteData6" data-id="6" class="dataDeletion">Delete Data</button></p>
+            </div>
+        </div>
+        <button class="createNew6" id="createNew6"><i class="fas fa-plus"></i></button>
+    </div>
+
+    <div id="sss">
+        <a href="javascript:" id="dataMenuSound" class="dataMenuSound"><i class="fas fa-volume-up"></i></a>
+    </div>
+    <a href="index.html" id="dataMenuHome"><i class="fas fa-home"></i></a>
+    <div id="ss">
+        <a href="javascript:" id="dataMenu" class="menuDataSS"><i class="fas fa-angle-double-up "></i></a>
+    </div>
+
+</div>
+
+
+
+<!-- Modal create data no 5-->
+<div class="modal fade" id="createHumanData4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #3d3d3d; color: white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" align="center">Create/Update Unit Data No.5 <i class="fas fa-folder-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered" style="color: white">
+<!--                    <tr>-->
+<!--                        <td>ID: </td>-->
+<!--                        <td><input type="text" class="form-control idData" id="idData" placeholder="Enter ID..."></td>-->
+<!--                    </tr>-->
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text"  class="form-control nameData" id="nameData4" oninput="maxTextName(this.value,this.id)"  placeholder="Enter Name..."></td>
+                    </tr>
+                    <tr>
+                        <td>Short Description: </td>
+                        <td><input type="text" class="form-control" id="shortDesData4" oninput="maxTextShortDes(this.value,this.id)" placeholder="Enter Short Desc"></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><input type="text" class="form-control" id="desData4" oninput="maxTextDes(this.value,this.id)" placeholder="Desc"></td>
+                    </tr>
+                    <tr>
+                        <td>Image Data</td>
+                        <td><label class="btn  form-control btn-file dataFile">
+                            UpLoad <i class="fas fa-upload"></i><input type="file" style="display: none;"  id="showImg4" onchange="loadFile4(event)">
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Preview:</td>
+                        <td><img id="previewImgOutput4" src="img/glitchImgPreview.gif" style="width: 300px; height: 120px"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary" href="index.html">Back to the main Page</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close <i class="fas fa-times"></i></button>
+                <button type="button" class="btn btn-primary" id="confirmData4">Save <i class="fas fa-folder-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal create data no 4-->
+<div class="modal fade" id="createHumanData5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #3d3d3d; color: white">
+            <div class="modal-header">
+                <h5 class="modal-title"  align="center">Create/Update Unit Data No.4 <i class="fas fa-folder-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered" style="color: white">
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text"  class="form-control nameData" id="nameData5" oninput="maxTextName(this.value,this.id)"  placeholder="Enter Name..."></td>
+                    </tr>
+                    <tr>
+                        <td>Short Description: </td>
+                        <td><input type="text" class="form-control" id="shortDesData5" oninput="maxTextShortDes(this.value,this.id)" placeholder="Enter Short Desc"></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><input type="text" class="form-control" id="desData5" oninput="maxTextDes(this.value,this.id)" placeholder="Desc"></td>
+                    </tr>
+                    <tr>
+                        <td>Image Data</td>
+                        <td><label class="btn dataFile form-control btn-file">
+                            UpLoad <i class="fas fa-upload"></i> <input type="file" style="display: none;"  id="showImg5" onchange="loadFile5(event)">
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Preview:</td>
+                        <td><img id="previewImgOutput5" src="img/glitchImgPreview.gif" style="width: 300px; height: 120px" ></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary" href="index.html">Back to the main Page</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close <i class="fas fa-times"></i></button>
+                <button type="button" class="btn btn-primary" id="confirmData5">Save <i class="fas fa-folder-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal create data no 6-->
+<div class="modal fade" id="createHumanData6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #3d3d3d; color: white">
+            <div class="modal-header">
+                <h5 class="modal-title"  align="center">Create/Update Unit Data No.6 <i class="fas fa-folder-plus"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered" style="color: white">
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text"  class="form-control nameData" id="nameData6" oninput="maxTextName(this.value,this.id)"  placeholder="Enter Name..."></td>
+                    </tr>
+                    <tr>
+                        <td>Short Description: </td>
+                        <td><input type="text" class="form-control" id="shortDesData6" oninput="maxTextShortDes(this.value,this.id)" placeholder="Enter Short Desc"></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><input type="text" class="form-control" id="desData6" oninput="maxTextDes(this.value,this.id)" placeholder="Desc"></td>
+                    </tr>
+                    <tr>
+                        <td>Image Data</td>
+                        <td><label class="btn dataFile form-control btn-file">
+                            UpLoad <i class="fas fa-upload"></i> <input type="file" style="display: none;"  id="showImg6" onchange="loadFile6(event)">
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Preview:</td>
+                        <td><img id="previewImgOutput6" src="img/glitchImgPreview.gif" style="width: 300px; height: 120px" ></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary" href="index.html">Back to the main Page</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close <i class="fas fa-times"></i></button>
+                <button type="button" class="btn btn-primary" id="confirmData6">Save <i class="fas fa-folder-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal confirm Delete-->
+<!-- Modal -->
+<div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #4b4b4b; color: white">
+            <div class="modal-header">
+                <h5 class="modal-title" id=""><b>Do You Want To Delete This Data? <i class="fas fa-cog"></i></b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <h4> Once you deleted, Your data can not be restore, Sever's slot will be lost 1.</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger form-control" id="confirmDeletion">Delete <i class="fas fa-user-slash"></i></button>
+                <button type="button" class="btn btn-secondary form-control" data-dismiss="modal">Close <i class="fas fa-ban"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(window).on('load', function () {
+        $('.loader-container').fadeOut(4000);
+    });
+</script>
+<script src="script/humanData.js"></script>
+
+
+</body>
+</html>

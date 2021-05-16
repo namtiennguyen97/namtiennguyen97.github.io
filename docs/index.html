@@ -1,1 +1,279 @@
-<p>Hello</p>
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript List</title>
+    <link rel="shortcut icon" href="img/2b_icon.png" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/guide.css">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="script/dictionary.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+
+</head>
+<!--làm cho giống menu Nier vì fan cuồng @@-->
+<!--<audio autoplay>-->
+<!--    <source src="sounds/nierRing.wav">-->
+<!--</audio>-->
+<audio id="nierSound">
+<!--    hover menu-->
+    <source src="sounds/nierMail.mp3" >
+</audio>
+
+<audio id="nierChoose" >
+    <source src="sounds/nierMenu.wav">
+</audio>
+
+<audio id="mainMenuSound" autoplay loop>
+    <source src="backgroundMusic/cityRuinNier.mp3">
+</audio>
+
+
+<body class="main">
+
+<!--make loading screen style Nier hehe-->
+<img src="loadingScreen/loadingNier.gif" class="loader-container">
+
+
+
+<div>
+    <h1 class="titleGlitch" style="color: #fffeed" align="center">Js List <i class="fab fa-github"></i></h1>
+</div>
+<div class="menu">
+    <h3 align="center" style="color: #fffeed"><b>Main Menu</b> <i class="fas fa-caret-down"></i></h3>
+    <div class="line">
+
+    </div>
+
+    <div align="center">
+        <h2  ><a class="itemMenu menuBar" id="psShoppingTip" href="shoppingCart.html"><span style="color: white">PS Shopping</span></a></h2>
+
+    </div>
+
+
+    <div align="center">
+        <h2  ><a class="itemMenu menuBar" id="brokenDataTip" href="profileManager.html"><span style="color: white">Bunker Data</span></a></h2>
+    </div>
+
+    <div align="center">
+        <h2 ><a class="itemMenu menuBar" id="dictionaryTip" href="dictionary.html"><span style="color: white"> Dictiona<span style="color: greenyellow">ry</span></span></a></h2>
+    </div>
+
+
+    <div align="center">
+        <h2  ><a class="itemMenu menuBar" id="wormGameTip" href="worm.html"><span style="color: white">Worm Game</span></a></h2>
+    </div>
+
+<br>
+    <div class="line2">
+
+    </div>
+
+    <div align="center">
+        <h2  ><a class="itemMenu menuBar setting" id="settingTip" href="javascript:"><span style="color: white">Setting <img id="cogsSetting" src="img/cogsLoading1.gif"></span></a></h2>
+    </div>
+
+<!--    luu y-->
+    <div align="center">
+        <h2  id="tutorial"><a class="itemMenu menuBar tutorial" id="guideTip" href="javascript:"><span style="color: white">Hide Tip <i class="fas fa-lightbulb"></i></span></a></h2>
+    </div>
+<!--show hide tutorial-->
+
+    <div align="center" id="showCredit">
+        <h2  ><a  class="itemMenu menuBar credit" href="javascript:" id="creditTip"><span style="color: white">Credit</span></a></h2>
+        <h2 id="hiddenCredit"><span id="authorTip" class=" menuBar"><a class="linkMe" href="https://github.com/namtiennguyen97">Made by NamNguyen</a></span></h2>
+    </div>
+
+
+<!--<img src="img/2b_Best_Vector_Croped.png" id="mainMenuGuide" style="height: 39%;width: 10%">-->
+
+<!--    setting modal-->
+
+    <!-- Modal Setting -->
+    <div class="modal fade" id="settingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="background-color: #bbbbbb" >
+
+            <div class="settingContent">
+                <div class="modal-header ">
+                    <h5 class="modal-title" id="exampleModalLabel">SOUND SETTING  <i class="fa fa-cogs"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <span > <b>Menu Theme: </b></span>
+                            </div>
+                            <div class="col">
+                                <span id="mainMenuSoundSetting"> <i  class="themeSound btn btn-secondary fas fa-volume-up"></i></span>
+                            </div>
+                            <div class="col">
+                                <span > <b>Hover Effect: </b></span>
+                            </div>
+                            <div class="col">
+                                <span id="effectSoundSetting"><i  class="effectSound btn btn-secondary fas fa-volume-up"></i></span>
+                            </div>
+                        </div>
+
+<!--                        Divide-->
+                        <div class="row solidLine">
+                        </div>
+                        <div class="blackSolidLine">
+
+                        </div>
+                        <div class="row solidLine">
+
+                        </div>
+<!--                        end of divide-->
+
+                        <div class="row" >
+                            <div class="col">
+                                <span > <b>Click Effect: </b> </span>
+                            </div>
+                            <div class="col">
+                                 <span id="clickSoundSetting"><i  class="clickSound btn btn-secondary fas fa-volume-up"></i></span>
+                            </div>
+
+
+                            <div class="col">
+                                <span > <b>Sound Master: </b> </span>
+                            </div>
+                            <div class="col">
+                                <span id="masterSoundSetting"><i  class="masterSound btn btn-secondary fas fa-volume-up"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                    <i class="fas fa-volume-mute"></i>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+<!--    end of setting modal-->
+
+<!--    credit modal-->
+    <div class="modal fade" id="creditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #bbbbbb">
+                <div class="modal-header">
+                    <h5 class="modal-title modalCreditTitle" >About this project  <i class="fab fa-github"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span  class="creditContent">Select Language: </span>
+                    <select id="selectLanguage">
+                        <option selected>Select your Language</option>
+                        <option value="vn">Vietnamese</option>
+                        <option value="en">English</option>
+                    </select>
+                    <br>
+                    <div class="lg" id="vn">
+                        <span class="creditContent">Bạn đã chọn ngôn ngữ Tiếng Việt. <i class="fas fa-check"></i></span>
+                        <br>
+                        <div class="underline"></div>
+                        <span class="creditContent">Đây là project tạo ra nhằm luyện tập với Javascript thuần thúy. Ở đây có 4 project chính là Ps Shopping, Open Dictionary- Từ điển 2 chiều/ từ điển mở, Broken Server, và Worm Game. Chủ đề đa số theme/ost là phong cách Game.</span>
+                        <br>
+                        <div class="underline"></div>
+                        <span class="creditContent">Đây là web tĩnh, nên không có database lưu trữ, những thứ bạn tương tác chỉ là giả tưởng database.</span>
+                        <div class="underline"></div>
+                        <span class="creditContent">Không khuyến khích truy cập trang web bằng điện thoại (Mobile), vì html css không fit với khung mobile, một số thứ sẽ nhảy loạn lên vì tôi ngu khoản vị trí css. Tuy nhiên các chức năng vẫn sẽ hoạt động bình thường.</span>
+                        <br>
+                        <div class="underline"></div>
+                        <span class="creditContent">Tác giả: Nam Nguyen <i class="fab fa-github-alt"></i></span>
+                    </div>
+                    <div class="lg" id="en">
+                        <span class="creditContent">You selected English language. <i class="fas fa-check"></i></span>
+                        <br>
+                        <div class="underline"></div>
+                        <span class="creditContent">This project just for training about pure javascript. There is four main projects: PS Shopping, Open Dictionary- Two way Dictionary, Broken Server, and Worm Game. The most theme/ost is game style.</span>
+                        <br>
+                        <div class="underline"></div>
+                        <span class="creditContent">This is static website, there is no database to save your progress, all your progress ex: "add cart, create new word data, create new profile,..." is fake database.</span>
+                        <div class="underline"></div>
+                        <span class="creditContent">I WILL NOT recommend you access this website on mobile, because html and css will not fit in mobile (i m noob at this). However all website function is available as normal.</span>
+                        <br>
+                        <div class="underline"></div>
+                        <span class="creditContent">Made by Nam Nguyen <i class="fab fa-github-alt"></i></span>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    end of credit modal-->
+</div>
+
+<!--box GUIDE-->
+
+<div id="showGuide">
+    <div class="glitch glitch--style-1 glitchGuide">
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+    </div>
+
+    <span id="guideMsgIndex">Welcome to Js App, im your guide! Click on me to take some tip! Or you can turn off me by using Hide Tip on Menu bar!</span>
+</div>
+
+
+<!--end of box guide-->
+
+<script src="script/guideMsg.js"></script>
+<script src="script/tipping.js"></script>
+<script>
+    $(window).on('load', function () {
+        $('.loader-container').fadeOut(4000);
+    });
+</script>
+<script src="script/soundMainTheme.js"></script>
+<script>
+    $('#showCredit').on('click','.credit' ,function () {
+        $('#creditModal').modal('show');
+        $('.lg').hide();
+    });
+
+    $('#selectLanguage').change(function () {
+        $('.lg').hide();
+        $('#'+ $(this).val()).show();
+    });
+
+
+  $('#tutorial').on('click','.tutorial', function () {
+        $('#showGuide').hide();
+        $('.tutorial').replaceWith("<a class=\"itemMenu menuBar tutorialDown\" id=\"guideTip\" href=\"javascript:\"><span style=\"color: white\">Show Tip <i class=\"far fa-lightbulb\"></i></span></a>");
+  });
+
+  $('#tutorial').on('click','.tutorialDown', function () {
+      $('#showGuide').show();
+      $('.tutorialDown').replaceWith("<a class=\"itemMenu menuBar tutorial\" id=\"guideTip\" href=\"javascript:\"><span style=\"color: white\">Hide Tip <i class=\"fas fa-lightbulb\"></i></span></a>");
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="wormTheme">
+<head>
+    <meta charset="UTF-8">
+    <title>Hungry Worm!</title>
+    <link rel="shortcut icon" href="img/2b_icon.png" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+<body>
+<audio autoplay>
+    <source src="sounds/snailSound.mp3">
+</audio>
+
+<a class="btn btn-success" style="color: #fffeed" href="index.html">Back <i class="fa fa-home"></i></a>
+<div class="title-worm">
+
+    <div class="display"><span class="text-danger"><b>This worm is too hungry, help feed him!</b></span></div>
+    <img src="img/worm.gif" height="60" width="80" style="left: 200px; top: 22px;position: relative"/>
+    <!--    <div id="score" style="left: 500px; top: 0px">Score: <span class="text-success"></span></div>-->
+</div>
+
+
+<div id="buttonWorm">
+    <canvas id="canvas"></canvas>
+    <div id="wormButton">
+       <img src="img/wormTheme.jpg" class="img" style="width: 60%;height: 60%">
+        <h3 class="text-success">For Mobile user/Dành cho Mobile @@.</h3>
+
+                        <div id="rotateMode">
+                            <button type="button" id="btnLeft" class="btn btn-success" onclick="turnLeft()"><i class="fas fa-arrow-left"></i></button>
+                            <button type="button" id="btnRight" class="btn btn-success" onclick="turnRight()"><i class="fas fa-arrow-right"></i></button>
+                            <button type="button" id="btnUp" class="btn btn-success " onclick="turnUp()"><i class="fas fa-arrow-up"></i></button>
+                            <button type="button" id="btnDown" class="btn btn-success " onclick="turnDown()"><i class="fas fa-arrow-down"></i></button>
+                        </div>
+    </div>
+</div>
+</body>
+<script>
+    let background = "#231f20"; // mau nen
+    let worm_color = "#15b284"; // mau con sau
+    let food_color = "#e66916";// mau thuc an de hien thi
+
+    //ve muc play
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext('2d');
+    canvas.width = canvas.height = 500;
+
+    let fr = 20; // frame: Khung .
+    let s = 10;
+    let t = canvas.width / s;
+    //
+    let pos;
+    let vel;
+    let food;
+    let worm;
+
+    function init() {
+        pos = {x: 10, y: 10}; // vi tri bat dau cua con Sau
+        vel = {x: 0, y: 0};
+        worm = [ //tao con sau bang mang
+            {x: 8, y: 10},
+            {x: 9, y: 10},
+            {x: 10, y: 10},
+
+        ]
+        randomFood(); // goi ham function food
+    }
+
+    init();
+
+    // function cho random food
+    function randomFood() {
+        food = {
+            x: Math.floor(Math.random() * t),
+            y: Math.floor(Math.random() * t),
+        }
+        for (let cell of worm) {
+            if (cell.x === food.x && food.y === cell.y) {  //va cham Worm vs Food
+                return randomFood(); // an xong thi random food
+            }
+        }
+    }
+
+    document.addEventListener('keydown', keydown);
+
+    function keydown(e) {
+        switch (e.keyCode) {
+            case 37: {
+                return vel = {x: -1, y: 0}
+            }
+            case 38: {
+                return vel = {x: 0, y: -1}
+            }
+            case 39: {
+                return vel = {x: 1, y: 0}
+            }
+            case 40: {
+                return vel = {x: 0, y: 1}
+            }
+        }
+    }
+    // fucntion keycode for joystick
+
+    function turnLeft() {
+        return vel = {x: -1, y: 0}
+    }
+    function turnRight() {
+        return vel = {x: 1, y: 0}
+    }
+    function turnUp() {
+        return vel = {x: 0, y: -1}
+    }
+    function turnDown() {
+        return vel = {x: 0, y: 1}
+    }
+    //end of function joystick
+
+    function wormGame() {
+        ctx.fillStyle = background;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = worm_color;
+        for (let cell of worm) {
+            ctx.fillRect(cell.x * s, cell.y * s, s, s);
+        }
+        ctx.fillStyle = food_color;
+        ctx.fillRect(food.x * s, food.y * s, s, s);
+        pos.x += vel.x;
+        pos.y += vel.y;
+
+        if (pos.x < 0 || pos.x > t || pos.y < 0 || pos.y > t) {
+            init();
+        }
+        //dai ra
+        if (food.x === pos.x && food.y === pos.y) {
+            worm.push({...pos});
+            pos.x += vel.x;
+            pos.y += vel.y;
+            randomFood();
+        }
+        if (vel.x || vel.y) {
+            for (let cell of worm) {
+                if (cell.x === pos.x && cell.y === pos.y) {
+                    return init();
+
+                }
+            }
+            worm.push({...pos});
+            worm.shift();
+
+        }
+    };
+    setInterval(() => { // set time lien tuc. nguoc lai voi setTimeOut
+        requestAnimationFrame(wormGame);
+    }, 1200 / fr)
+
+</script>
+</html>

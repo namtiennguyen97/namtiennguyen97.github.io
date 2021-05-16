@@ -1,0 +1,117 @@
+/*hover image product change img 1*/
+.box-img-hover1{
+
+    border: 1px solid #CCC;
+    overflow: hidden;
+    position: relative;
+}
+.box-img-hover1 img{
+    vertical-align:middle;
+    transition: all 1s;
+}
+.box-img-hover1 .img-change1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+.box-img-hover1:hover .img-change1{
+    right: -100%;
+    opacity: 0;
+}
+
+/*san pham 2*/
+.box-img-hover2{
+
+    border: 1px solid #CCC;
+    overflow: hidden;
+    position: relative;
+}
+.box-img-hover2 img{
+    vertical-align:middle;
+    transition: all 1s;
+}
+.box-img-hover2 .img-change2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+.box-img-hover2:hover .img-change2{
+    right: -100%;
+    opacity: 0;
+}
+
+
+/*san pham 3*/
+
+.box-img-hover3{
+
+    border: 1px solid #CCC;
+    overflow: hidden;
+    position: relative;
+}
+.box-img-hover3 img{
+    vertical-align:middle;
+    transition: all 1s;
+}
+.box-img-hover3 .img-change3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+.box-img-hover3:hover .img-change3{
+    right: -100%;
+    opacity: 0;
+}
+
+
+
+
+
+
+.box-img-hover5{
+
+    border: 1px solid #CCC;
+    overflow: hidden;
+    position: relative;
+}
+.box-img-hover5 img{
+    vertical-align:middle;
+    transition: all 1s;
+}
+.box-img-hover5 .img-change5{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+.box-img-hover5:hover .img-change5{
+    right: -100%;
+    opacity: 0;
+}
+
+
+
+
+.box-img-hover4{
+
+    border: 1px solid #CCC;
+    overflow: hidden;
+    position: relative;
+}
+.box-img-hover4 img{
+    vertical-align:middle;
+    transition: all 1s;
+}
+.box-img-hover4 .img-change4{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+.box-img-hover4:hover .img-change4{
+    right: -100%;
+    opacity: 0;
+}
