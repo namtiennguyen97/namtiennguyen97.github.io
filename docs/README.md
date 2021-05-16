@@ -6,6 +6,7 @@ This is static website that using pure Js, Jquery.
 Old Repository has been deleted due it died in GitHub Pages. I just created new repo and deployed again with Jekyll, not manual like before.
 The entire project using gaming style. Nier.
 
+This project have 4 "child" project. Just check it out!
 ### Note
 Please dont access this webiste on Mobile, every thing will go crazy, because i m super noob in css position. But i will update and fix them soon.
 
