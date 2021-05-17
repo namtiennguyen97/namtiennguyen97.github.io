@@ -7,10 +7,11 @@
 ![alt text](https://github.com/namtiennguyen97/namtiennguyen97.github.io/blob/master/docs/img/screenGithub.png?raw=true)
 
 ## About this project
-This is static website that using pure Js, Jquery.
+This is website that using pure Js, Jquery. This project have 4 "child" project. Each child project is different category. Just check it out!
+
+
 Old Repository has been deleted due it died in GitHub Pages. I just created new repo and deployed again with Jekyll, not manual like before.
 
-This project have 4 "child" project. Each child project is different category. Just check it out!
 
 The entire project using gaming style- Nier. This project contain alot of action sound, command sound, js, css, img, etc,... so that will be a bit of heavy when it loaded! Because this is just static website, there is no backend server to save any of data. All project is faked database. I can say this project size can be compare with a Laravel project.
 
