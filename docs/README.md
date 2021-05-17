@@ -18,7 +18,7 @@ The entire project using gaming style- Nier. This project contain alot of action
 
 ![alt text](https://github.com/namtiennguyen97/namtiennguyen97.github.io/blob/master/docs/img/screenGithub2.png?raw=true)
 
-Still on update.
+Still on update/add more project.
 
 ### Note
 Please dont access this webiste on Mobile, every thing will go crazy, because i m super noob in css position. But i will update and fix them soon.
