@@ -92,6 +92,7 @@ background-color: #ffffff;
     left: 6px;
     height:25%;
     width: 15%;
+
 }
 #mainMenuGuide:active{
     animation: shake2b 0.5s;
@@ -118,8 +119,21 @@ background-color: #ffffff;
 .html{
     height: 100%;
     cursor: url("../img/mainCursor.svg"), auto;
-
 }
+
+
+/*khong cho phep website truy cap bang dien thoai*/
+/*@media only screen and (max-width: 700px) {*/
+
+/*    .main {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+
+
+/*#mobileDisplay{*/
+/*    display: none;*/
+/*}*/
 
 
 .main{
